@@ -36,7 +36,7 @@ const ProductList: React.FC<ProductListProps> = ({ items, onRemove, isCheckout =
             )}
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">{item.name}</p>
-              <p className="text-sm text-gray-500">${item.price.toFixed(2)} each</p>
+              <p className="text-sm text-gray-500">K{item.price.toFixed(2)} each</p>
               <div className="flex items-center mt-1">
                 <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
                   {item.category}
@@ -48,7 +48,7 @@ const ProductList: React.FC<ProductListProps> = ({ items, onRemove, isCheckout =
             </div>
             <div className="flex-shrink-0 ml-4 text-right">
               <div className="font-medium text-gray-900">
-                ${(item.price * item.quantity).toFixed(2)}
+                K{(item.price * item.quantity).toFixed(2)}
               </div>
               <div className="text-sm text-gray-500">
                 Qty: {item.quantity}

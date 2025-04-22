@@ -59,8 +59,8 @@ const Receipt: React.FC<ReceiptProps> = ({ receipt }) => {
               <tr key={item.id} className="border-b border-gray-100">
                 <td className="py-2 text-gray-800">{item.name}</td>
                 <td className="py-2 text-center text-gray-800">{item.quantity}</td>
-                <td className="py-2 text-right text-gray-800">${item.price.toFixed(2)}</td>
-                <td className="py-2 text-right text-gray-800">${(item.price * item.quantity).toFixed(2)}</td>
+                <td className="py-2 text-right text-gray-800">K{item.price.toFixed(2)}</td>
+                <td className="py-2 text-right text-gray-800">K{(item.price * item.quantity).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
@@ -70,15 +70,15 @@ const Receipt: React.FC<ReceiptProps> = ({ receipt }) => {
       <div className="border-t border-gray-200 pt-4 mb-6">
         <div className="flex justify-between mb-2">
           <span className="text-gray-600">Subtotal</span>
-          <span className="text-gray-800">${receipt.totalAmount.toFixed(2)}</span>
+          <span className="text-gray-800">K{receipt.totalAmount.toFixed(2)}</span>
         </div>
         <div className="flex justify-between mb-2">
           <span className="text-gray-600">Tax (7%)</span>
-          <span className="text-gray-800">${(receipt.totalAmount * 0.07).toFixed(2)}</span>
+          <span className="text-gray-800">K{(receipt.totalAmount * 0.07).toFixed(2)}</span>
         </div>
         <div className="flex justify-between font-bold text-lg">
           <span>Total</span>
-          <span>${(receipt.totalAmount * 1.07).toFixed(2)}</span>
+          <span>K{(receipt.totalAmount * 1.07).toFixed(2)}</span>
         </div>
       </div>
 

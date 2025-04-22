@@ -167,7 +167,7 @@ const TrolleyPage: React.FC = () => {
                     <div>
                       <span className="text-gray-600 mr-2">Total:</span>
                       <span className="text-xl font-bold text-gray-900">
-                        ${totalAmount.toFixed(2)}
+                        K{totalAmount.toFixed(2)}
                       </span>
                     </div>
                     <div className="text-gray-500 text-sm">

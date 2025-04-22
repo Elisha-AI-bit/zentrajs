@@ -189,18 +189,18 @@ const CheckoutPage: React.FC = () => {
                     
                     <div className="flex justify-between">
                       <span className="text-gray-600">Subtotal</span>
-                      <span>${totalAmount.toFixed(2)}</span>
+                      <span>K{totalAmount.toFixed(2)}</span>
                     </div>
                     
                     <div className="flex justify-between">
                       <span className="text-gray-600">Tax (7%)</span>
-                      <span>${(totalAmount * 0.07).toFixed(2)}</span>
+                      <span>K{(totalAmount * 0.07).toFixed(2)}</span>
                     </div>
                     
                     <div className="border-t border-gray-200 mt-2 pt-2">
                       <div className="flex justify-between font-semibold">
                         <span>Total</span>
-                        <span className="text-blue-600">${(totalAmount * 1.07).toFixed(2)}</span>
+                        <span className="text-blue-600">K{(totalAmount * 1.07).toFixed(2)}</span>
                       </div>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ const CheckoutPage: React.FC = () => {
                           )}
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-medium text-gray-900">{item.name}</p>
-                            <p className="text-sm text-gray-500">${item.price.toFixed(2)} each</p>
+                            <p className="text-sm text-gray-500">K{item.price.toFixed(2)} each</p>
                             <div className="flex items-center mt-1">
                               <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
                                 {item.category}
@@ -279,7 +279,7 @@ const CheckoutPage: React.FC = () => {
                           </div>
                           <div className="flex-shrink-0 ml-4 text-right">
                             <div className="font-medium text-gray-900">
-                              ${(item.price * item.quantity).toFixed(2)}
+                              K{(item.price * item.quantity).toFixed(2)}
                             </div>
                             <div className="text-sm text-gray-500">
                               Qty: {item.quantity}
@@ -297,7 +297,7 @@ const CheckoutPage: React.FC = () => {
                       <div>
                         <span className="text-gray-600 mr-2">Total:</span>
                         <span className="text-xl font-bold text-gray-900">
-                          ${totalAmount.toFixed(2)}
+                          K{totalAmount.toFixed(2)}
                         </span>
                       </div>
                       <div className="text-gray-500 text-sm">

@@ -18,18 +18,18 @@ const CartSummary: React.FC<CartSummaryProps> = ({ items }) => {
       <div className="space-y-2">
         <div className="flex justify-between">
           <span className="text-gray-600">Items ({totalItems})</span>
-          <span className="font-medium">${subtotal.toFixed(2)}</span>
+          <span className="font-medium">K{subtotal.toFixed(2)}</span>
         </div>
         
         <div className="flex justify-between">
           <span className="text-gray-600">Tax (7%)</span>
-          <span className="font-medium">${tax.toFixed(2)}</span>
+          <span className="font-medium">K{tax.toFixed(2)}</span>
         </div>
         
         <div className="border-t border-gray-200 my-2 pt-2">
           <div className="flex justify-between font-semibold">
             <span>Total</span>
-            <span className="text-blue-600">${total.toFixed(2)}</span>
+            <span className="text-blue-600">K{total.toFixed(2)}</span>
           </div>
         </div>
       </div>
