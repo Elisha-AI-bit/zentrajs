@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 shadow-md">
+      <header className="bg-green-600 shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="text-white font-bold text-2xl flex items-center gap-2">
             <ShoppingCart size={28} />
@@ -45,6 +45,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               }`}
             >
               Admin
+            
+              
             </Link>
           </nav>
         </div>

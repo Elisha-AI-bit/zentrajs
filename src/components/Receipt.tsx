@@ -22,8 +22,8 @@ const Receipt: React.FC<ReceiptProps> = ({ receipt }) => {
     <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
       <div className="text-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-1">ZENTRA MARKET</h1>
-        <p className="text-gray-500">123 Retail Avenue, Shopping City</p>
-        <p className="text-gray-500">Tel: (555) 123-4567</p>
+        <p className="text-gray-500">Chau , Shopping City</p>
+        <p className="text-gray-500">Tel: +260 973993130</p>
       </div>
 
       <div className="border-t border-b border-gray-200 py-4 mb-4">

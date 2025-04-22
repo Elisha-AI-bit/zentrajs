@@ -3,10 +3,12 @@ import { Users, Package, BarChart, Clock, Search } from 'lucide-react';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import { products } from '../lib/data';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('');
+  const navigate = useNavigate();
 
   // Get unique categories from products
   const categories = [...new Set(products.map(product => product.category))];
@@ -19,14 +21,24 @@ const AdminPage: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const handleLogout = () => {
+    // Logic to log out the user
+    navigate('/login');
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-6">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-          <p className="text-gray-600 mt-1">
-            Manage inventory, view analytics, and process checkouts
-          </p>
+        <div className="mb-6 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+            <p className="text-gray-600 mt-1">
+              Manage inventory, view analytics, and process checkouts
+            </p>
+          </div>
+          <Button variant="outline" onClick={handleLogout}>
+            Logout
+          </Button>
         </div>
 
         {/* Dashboard Stats */}
@@ -62,7 +74,7 @@ const AdminPage: React.FC = () => {
               </div>
               <div>
                 <p className="text-gray-500 text-sm">Today's Sales</p>
-                <p className="text-2xl font-semibold">$1,245.89</p>
+                <p className="text-2xl font-semibold">K1,245.89</p>
               </div>
             </div>
           </div>
@@ -105,6 +117,7 @@ const AdminPage: React.FC = () => {
             size="lg" 
             fullWidth 
             className="p-6 justify-start bg-green-600 hover:bg-green-700"
+            onClick={() => window.location.href = '/analytics'}
           >
             <div className="flex items-center">
               <div className="bg-green-700 p-3 rounded-full mr-4">
@@ -122,6 +135,7 @@ const AdminPage: React.FC = () => {
             size="lg" 
             fullWidth 
             className="p-6 justify-start bg-purple-600 hover:bg-purple-700"
+            onClick={() => window.location.href = '/user-management'}
           >
             <div className="flex items-center">
               <div className="bg-purple-700 p-3 rounded-full mr-4">
@@ -226,7 +240,7 @@ const AdminPage: React.FC = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        ${product.price.toFixed(2)}
+                        K{product.price.toFixed(2)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {product.weight}

@@ -29,7 +29,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ items }) => {
         <div className="border-t border-gray-200 my-2 pt-2">
           <div className="flex justify-between font-semibold">
             <span>Total</span>
-            <span className="text-blue-600">K{total.toFixed(2)}</span>
+            <span className="text-green-600">K{total.toFixed(2)}</span>
           </div>
         </div>
       </div>

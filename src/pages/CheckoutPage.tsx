@@ -125,7 +125,7 @@ const CheckoutPage: React.FC = () => {
                     value={trolleyId}
                     onChange={(e) => setTrolleyId(e.target.value)}
                     placeholder="e.g., TR001"
-                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
                     disabled={loadingTrolley}
                   />
                 </div>
@@ -200,7 +200,7 @@ const CheckoutPage: React.FC = () => {
                     <div className="border-t border-gray-200 mt-2 pt-2">
                       <div className="flex justify-between font-semibold">
                         <span>Total</span>
-                        <span className="text-blue-600">K{(totalAmount * 1.07).toFixed(2)}</span>
+                        <span className="text-green-600">K{(totalAmount * 1.07).toFixed(2)}</span>
                       </div>
                     </div>
                   </div>

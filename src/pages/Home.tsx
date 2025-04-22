@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <Layout>
       {/* Hero section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-green-600 to-green-700 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -19,13 +19,18 @@ const Home: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/trolley/TR001">
-                <Button size="lg" variant="success" className="font-semibold">
+                <Button size="lg" variant="primary" className="font-semibold">
                   Start Shopping
                 </Button>
               </Link>
               <Link to="/admin">
                 <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 font-semibold">
                   Admin Dashboard
+                </Button>
+              </Link>
+              <Link to="/cashier">
+                <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 font-semibold">
+                  Cashier Dashboard
                 </Button>
               </Link>
             </div>
