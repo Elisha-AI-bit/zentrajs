@@ -17,20 +17,15 @@ const Home: React.FC = () => {
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Revolutionizing retail with real-time item tracking and seamless checkout
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
               <Link to="/trolley/TR001">
                 <Button size="lg" variant="primary" className="font-semibold">
                   Start Shopping
                 </Button>
               </Link>
               <Link to="/admin">
-                <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 font-semibold">
-                  Admin Dashboard
-                </Button>
-              </Link>
-              <Link to="/cashier">
-                <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 font-semibold">
-                  Cashier Dashboard
+                <Button size="lg" variant="primary" className="font-semibold">
+                  Staff login
                 </Button>
               </Link>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCart, Users, Clipboard, Home } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
+  const role = localStorage.getItem('role') || '';
 
   const isAdmin = location.pathname.includes('/admin');
   const isTrolley = location.pathname.includes('/trolley');
@@ -38,15 +39,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             >
               Smart Trolley
             </Link>
+            {role === 'cashier' && (
+              <Link
+                to="/cashier"
+                className={`text-white hover:text-blue-100 transition-colors ${
+                  location.pathname === '/cashier' ? 'font-semibold' : ''
+                }`}
+              >
+                Checkout
+              </Link>
+            )}
             <Link
               to="/admin"
               className={`text-white hover:text-blue-100 transition-colors ${
-                isAdmin ? 'font-semibold' : ''
+                location.pathname === '/admin' ? 'font-semibold' : ''
               }`}
             >
-              Admin
-            
-              
+              Staff
             </Link>
           </nav>
         </div>
@@ -71,15 +80,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <ShoppingCart size={20} />
             <span className="text-xs mt-1">Trolley</span>
           </Link>
-          <Link
-            to="/admin/checkout"
-            className={`flex flex-col items-center p-2 ${
-              location.pathname === '/admin/checkout' ? 'text-blue-600' : 'text-gray-600'
-            }`}
-          >
-            <Clipboard size={20} />
-            <span className="text-xs mt-1">Checkout</span>
-          </Link>
+          {role === 'cashier' && (
+            <Link
+              to="/cashier"
+              className={`flex flex-col items-center p-2 ${
+                location.pathname === '/cashier' ? 'text-blue-600' : 'text-gray-600'
+              }`}
+            >
+              <Clipboard size={20} />
+              <span className="text-xs mt-1">Checkout</span>
+            </Link>
+          )}
           <Link
             to="/admin"
             className={`flex flex-col items-center p-2 ${
@@ -87,7 +98,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             }`}
           >
             <Users size={20} />
-            <span className="text-xs mt-1">Admin</span>
+            <span className="text-xs mt-1">Staff</span>
           </Link>
         </div>
       </nav>

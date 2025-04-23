@@ -4,11 +4,14 @@ import Layout from '../components/Layout';
 import Button from '../components/Button';
 import { products } from '../lib/data';
 import { useNavigate } from 'react-router-dom';
+import AddItem from './AddItem';
+import Papa from 'papaparse';
 
 const AdminPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('');
   const navigate = useNavigate();
+  const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
 
   // Get unique categories from products
   const categories = [...new Set(products.map(product => product.category))];
@@ -25,6 +28,9 @@ const AdminPage: React.FC = () => {
     // Logic to log out the user
     navigate('/login');
   };
+
+  const openAddItemModal = () => setIsAddItemModalOpen(true);
+  const closeAddItemModal = () => setIsAddItemModalOpen(false);
 
   return (
     <Layout>
@@ -183,7 +189,7 @@ const AdminPage: React.FC = () => {
                 ))}
               </select>
               
-              <Button variant="success">Add New Product</Button>
+              <Button variant="success" onClick={openAddItemModal}>Add New Product</Button>
             </div>
             
             <div className="overflow-x-auto">
@@ -266,6 +272,8 @@ const AdminPage: React.FC = () => {
             )}
           </div>
         </div>
+
+        <AddItem isOpen={isAddItemModalOpen} onClose={closeAddItemModal} />
       </div>
     </Layout>
   );

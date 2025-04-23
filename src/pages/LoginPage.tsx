@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Button from '../components/Button';
 
 interface LoginPageProps {
-  onLogin: () => void;
+  onLogin: (role: string) => void;
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
@@ -15,7 +15,8 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const handleLogin = () => {
     const adminCredentials = { username: 'admin', password: 'admin123' };
     if (username === adminCredentials.username && password === adminCredentials.password) {
-      onLogin();
+      localStorage.setItem('role', 'admin');
+      onLogin('admin');
       navigate('/admin');
       return;
     }
@@ -24,8 +25,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       user.username === username && user.password === password
     );
     if (userExists) {
-      onLogin();
-      navigate('/admin');
+      localStorage.setItem('role', 'cashier');
+      onLogin('cashier');
+      navigate('/cashier');
     } else {
       alert('Invalid credentials');
     }
